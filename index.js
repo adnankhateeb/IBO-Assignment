@@ -66,13 +66,12 @@ const listOfProducts = [
       description: "Ceiling Fan",
    },
 ];
+
 function getUniqueProductCount(listOfProducts) {
    let productCount = {};
-   let n = listOfProducts.length;
 
    for (let product of listOfProducts) {
       let productName = product.productName;
-      //   let quantityOfProduct = listOfProducts[i].quantity;
       if (!productCount[productName]) {
          productCount[productName] = 1;
       } else {
@@ -87,8 +86,6 @@ console.log("Product Count", productCount);
 
 function getUniqueProducts(listOfProducts) {
    const uniqueProducts = listOfProducts.reduce((ac, cv) => {
-      console.log("cv:", cv)
-      console.log("ac:", ac)
       const objPresent = ac.find(
          (product) => product.productName === cv.productName
       );
